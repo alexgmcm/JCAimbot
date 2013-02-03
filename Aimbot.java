@@ -23,7 +23,7 @@ public class Aimbot{
 				if (pListener.getHaspBeenReleased()==true){
 					System.out.println("got here!");
 					pListener.setHaspBeenReleased(false);
-					BufferedImage image=robot.createScreenCapture(new Rectangle(1024,768));
+					BufferedImage image=robot.createScreenCapture(new Rectangle(0,0,1024,768));
 					File outputfile = new File("saved.png");
 
 					try{

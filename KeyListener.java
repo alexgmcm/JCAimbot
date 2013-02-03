@@ -4,7 +4,7 @@ import org.jnativehook.keyboard.NativeKeyEvent;
 import org.jnativehook.keyboard.NativeKeyListener;
 
 public class KeyListener implements NativeKeyListener{
-	private boolean haspBeenReleased;
+	volatile private boolean haspBeenReleased;
 
     final public boolean getHaspBeenReleased(){
         return haspBeenReleased;
