@@ -13,29 +13,25 @@ public class Aimbot{
 
 	public static void main(String[] args){
 
-		KeyListener pListener = new KeyListener();
+		KeyListener keyListener = new KeyListener();
+		MouseListener mouseListener = new MouseListener();
+		
 		try{
 			Robot robot = new Robot();
 
 			while(true){
 				
 				//pListener.haspBeenReleased = true;
-				if (pListener.getHaspBeenReleased()==true){
-					System.out.println("got here!");
-					pListener.setHaspBeenReleased(false);
+				if (keyListener.getHaspBeenReleased()==true){
+					//System.out.println("got here!");
+					keyListener.setHaspBeenReleased(false);
 					BufferedImage image=robot.createScreenCapture(new Rectangle(0,0,1024,768));
-
-					/*
-					File outputfile = new File("saved.png");
-					try{
-						ImageIO.write(image, "png", outputfile);
-						System.out.println("file written");
-					}catch(IOException e){
-						System.err.println("IOException: " + e.getMessage());
-					}
-					*/
-
 				} 
+
+				if (keyListener.isePressed==true){
+					robot.mouseMove(612, 384);
+					keyListener.isePressed=false;
+				}
 
 			}
 		}catch(AWTException e){ 
@@ -48,3 +44,13 @@ public class Aimbot{
 
 
 }
+
+/* OLD SCREENSHOT SAVING CODE
+					File outputfile = new File("saved.png");
+					try{
+						ImageIO.write(image, "png", outputfile);
+						System.out.println("file written");
+					}catch(IOException e){
+						System.err.println("IOException: " + e.getMessage());
+					}
+					*/

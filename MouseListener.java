@@ -4,7 +4,7 @@ import org.jnativehook.mouse.NativeMouseEvent;
 import org.jnativehook.mouse.NativeMouseInputListener;
 
 public class MouseListener implements NativeMouseInputListener {
-		volatile public 
+		//volatile public 
 
         public void nativeMouseClicked(NativeMouseEvent e) {
                 System.out.println("Mouse Clicked: " + e.getX() + ", " + e.getY());

@@ -4,7 +4,7 @@ javac -classpath `pwd`/JNativeHook.jar GlobalKeyListenerExample.java
 
 java -classpath `pwd`/JNativeHook.jar:`pwd` GlobalKeyListenerExample
 
-javac -classpath ./JNativeHook.jar Aimbot.java KeyListener.java 
+javac -classpath ./JNativeHook.jar Aimbot.java KeyListener.java MouseListener.java
 
 java -classpath .:./JNativeHook.jar Aimbot
 
