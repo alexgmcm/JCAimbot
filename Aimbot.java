@@ -24,14 +24,16 @@ public class Aimbot{
 					System.out.println("got here!");
 					pListener.setHaspBeenReleased(false);
 					BufferedImage image=robot.createScreenCapture(new Rectangle(0,0,1024,768));
-					File outputfile = new File("saved.png");
 
+					/*
+					File outputfile = new File("saved.png");
 					try{
 						ImageIO.write(image, "png", outputfile);
 						System.out.println("file written");
 					}catch(IOException e){
 						System.err.println("IOException: " + e.getMessage());
 					}
+					*/
 
 				} 
 

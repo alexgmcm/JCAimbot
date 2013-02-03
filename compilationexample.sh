@@ -12,5 +12,5 @@ javac -classpath ./JNativeHook.jar GlobalMouseListenerExample.java
 
 java -classpath .:./JNativeHook.jar GlobalMouseListenerExample
 
-#Mouse Clicked: 512, 384
+
 
