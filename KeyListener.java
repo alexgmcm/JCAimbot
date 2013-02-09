@@ -4,8 +4,9 @@ import org.jnativehook.keyboard.NativeKeyEvent;
 import org.jnativehook.keyboard.NativeKeyListener;
 
 public class KeyListener implements NativeKeyListener{
-	volatile private boolean haspBeenReleased;
-    volatile public boolean isePressed;
+	volatile private boolean haspBeenReleased = false;
+    volatile public boolean hastBeenReleased = false;
+    volatile public boolean isePressed = false;
 
     final public boolean getHaspBeenReleased(){
         return haspBeenReleased;
@@ -35,6 +36,11 @@ public class KeyListener implements NativeKeyListener{
 
                 if (e.getKeyCode() == NativeKeyEvent.VK_P) {
                         haspBeenReleased = true;
+                        //System.out.println("boolean set");
+                }
+
+                if (e.getKeyCode() == NativeKeyEvent.VK_T) {
+                        hastBeenReleased = true;
                         //System.out.println("boolean set");
                 }
         }

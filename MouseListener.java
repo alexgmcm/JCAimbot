@@ -4,6 +4,11 @@ import org.jnativehook.mouse.NativeMouseEvent;
 import org.jnativehook.mouse.NativeMouseInputListener;
 
 public class MouseListener implements NativeMouseInputListener {
+
+        volatile public int curMousePosX;
+        volatile public int curMousePosY;
+
+
 		//volatile public 
 
         public void nativeMouseClicked(NativeMouseEvent e) {
@@ -20,6 +25,9 @@ public class MouseListener implements NativeMouseInputListener {
 
         public void nativeMouseMoved(NativeMouseEvent e) {
                // System.out.println("Mouse Moved: " + e.getX() + ", " + e.getY());
+                curMousePosX=e.getX();
+                curMousePosY=e.getY();
+
         }
 
         public void nativeMouseDragged(NativeMouseEvent e) {
