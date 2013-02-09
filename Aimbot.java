@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.io.*;
-
+import java.util.Random;
 
 
 public class Aimbot{
@@ -15,6 +15,7 @@ public class Aimbot{
 
 		KeyListener keyListener = new KeyListener();
 		MouseListener mouseListener = new MouseListener();
+		//Random randGen = new Random();
 		
 		try{
 			Robot robot = new Robot();
@@ -29,7 +30,10 @@ public class Aimbot{
 				} 
 
 				if (keyListener.isePressed==true){
-					robot.mouseMove(612, 384);
+					//int r1 = randGen.nextInt(3) - 1;
+					//int r2 = randGen.nextInt(3) - 1;
+					robot.mouseMove(512, 384);
+					robot.mouseMove(712, 384);
 					keyListener.isePressed=false;
 				}
 
