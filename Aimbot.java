@@ -11,17 +11,17 @@ public class Aimbot{
 
 
 
-	public static void main(String[] args){
+	public static void main(String[] args) throws InterruptedException { 
 
 		KeyListener keyListener = new KeyListener();
 		MouseListener mouseListener = new MouseListener();
-		//Random randGen = new Random();
+		Random randGen = new Random();
 		
 		try{
 			Robot robot = new Robot();
 
 			while(true){
-				
+				//robot.mouseMove(512, 384);
 				//pListener.haspBeenReleased = true;
 				if (keyListener.getHaspBeenReleased()==true){
 					//System.out.println("got here!");
@@ -30,10 +30,19 @@ public class Aimbot{
 				} 
 
 				if (keyListener.isePressed==true){
-					//int r1 = randGen.nextInt(3) - 1;
-					//int r2 = randGen.nextInt(3) - 1;
-					robot.mouseMove(512, 384);
-					robot.mouseMove(712, 384);
+					int r1 = randGen.nextInt(3) - 1;
+					int r2 = randGen.nextInt(3) - 1;
+
+					
+					
+					robot.mouseMove(712 + r1, 384 + r2);
+					Thread.sleep(500);
+					robot.mouseMove(1012 + r1, 384 + r2);
+					Thread.sleep(500);
+					robot.mouseMove(1412 + r1, 384 + r2);
+					Thread.sleep(500);
+					robot.mouseMove(1812 + r1, 384 + r2);
+					Thread.sleep(500);
 					keyListener.isePressed=false;
 				}
 
