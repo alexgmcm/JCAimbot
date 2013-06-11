@@ -18,11 +18,35 @@ public class Aimbot{
 	public static BufferedImage image;
 	public static Color curpixel;
 	public int[] imageData;
+	public static width = 1024;
+	public static height = 768;
 	//refactor code with methods at some point when finished to make clearer
+
+
+	public static int 2Dtolinear(int[] xyCoords, int width){
+		int x = xyCoords[0];
+		int y = xyCoords[1];
+
+		int linearIndex = (y*width)+x;
+		return linearIndex;
+
+	}
+
+
+	public static int[] linearTo2D(int linearIndex){
+		y=linearIndex/width; //both are ints so it returns the divison result with the remainder truncated, as desired.
+		x=linearIndex % width; //returns remainder, as desired
+
+	}
+
 
 	public static void scanScreenAndMove() throws InterruptedException{
 
 		//get array from bufferedimage here
+		imageData = image.getRGB(0, 0, width, height, imageData, 0, width);
+		/*pixel   = rgbArray[offset + (y-startY)*scansize + (x-startX)];
+		therefore (x,y) is rgbArray[y*width + x] i.e. linear index*/
+
 
 		for(int y=0; y<768; y++){
 			for(int x=0; x<1024; x++){
